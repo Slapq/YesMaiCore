@@ -1,0 +1,75 @@
+{
+  "cron": {
+    "type": "object",
+    "title": "Cron 调度",
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "title": "启用 Core Cron",
+        "default": true
+      },
+      "default_timezone": {
+        "type": "string",
+        "title": "默认 IANA 时区",
+        "default": "Asia/Shanghai"
+      },
+      "catalog_refresh_seconds": {
+        "type": "number",
+        "title": "目录刷新秒数",
+        "minimum": 1,
+        "maximum": 300,
+        "default": 5
+      },
+      "owner_job_limit": {
+        "type": "integer",
+        "title": "单插件 Job 上限",
+        "minimum": 1,
+        "maximum": 128,
+        "default": 32
+      },
+      "global_job_limit": {
+        "type": "integer",
+        "title": "全局 Job 上限",
+        "minimum": 1,
+        "maximum": 1024,
+        "default": 256
+      },
+      "owner_dispatch_limit": {
+        "type": "integer",
+        "title": "单插件并发上限",
+        "minimum": 1,
+        "maximum": 16,
+        "default": 4
+      },
+      "minimum_interval_seconds": {
+        "type": "integer",
+        "title": "最短触发间隔秒数",
+        "minimum": 60,
+        "maximum": 86400,
+        "default": 60
+      },
+      "maximum_timeout_seconds": {
+        "type": "integer",
+        "title": "单次执行超时上限",
+        "minimum": 1,
+        "maximum": 86400,
+        "default": 7200
+      }
+    }
+  },
+  "permission": {
+    "type": "object",
+    "title": "命令权限",
+    "properties": {
+      "command_admins": {
+        "type": "array",
+        "title": "Bot 命令管理员",
+        "description": "按 platform:user_id 配置，例如 qq:123456789。不会继承群管理员、Web 管理员或插件管理权限。",
+        "items": {
+          "type": "string"
+        },
+        "default": []
+      }
+    }
+  }
+}

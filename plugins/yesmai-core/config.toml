@@ -1,0 +1,20 @@
+web_url = ""
+web_poll_interval_seconds = 5.0
+
+[plugin]
+enabled = true
+config_version = "1"
+
+[cron]
+enabled = true
+default_timezone = "Asia/Shanghai"
+catalog_refresh_seconds = 5.0
+owner_job_limit = 32
+global_job_limit = 256
+owner_dispatch_limit = 4
+minimum_interval_seconds = 60
+maximum_timeout_seconds = 7200
+
+[permission]
+# AstrBot-compatible Bot command administrators, scoped as "platform:user_id".
+command_admins = []
